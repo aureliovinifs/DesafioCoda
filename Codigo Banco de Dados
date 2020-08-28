@@ -1,0 +1,72 @@
+ create table agenda.contato(
+id_contato  serial  primary key,
+cpf VARCHAR (11) unique, 
+nome VARCHAR (100)
+)
+create table agenda.endereco(
+id_endereco serial primary key  ,
+id_contato INTEGER,
+logradouro VARCHAR(50),
+bairro VARCHAR(30),
+numero INT,
+uf VARCHAR(2),
+municipio VARCHAR(30),
+cep VARCHAR(8),
+preferencial char(1),
+FOREIGN KEY (id_contato) REFERENCES agenda.contato (id_contato)
+
+)
+
+create table agenda.telefone(
+id_telefone  serial primary key ,
+id_contato INTEGER ,
+telefone VARCHAR(11), 
+preferencial VARCHAR(1),
+FOREIGN KEY (id_contato) REFERENCES agenda.contato (id_contato)
+
+)
+
+create table agenda.email(
+id_email serial primary key  ,
+id_contato  INTEGER,
+email VARCHAR(50),
+preferencial VARCHAR(1),
+FOREIGN KEY (id_contato) REFERENCES agenda.contato (id_contato)
+
+)
+[14:37, 26/08/2020] Aurélio Vinícius: create table agenda.contato(
+id_contato  serial  primary key,
+cpf VARCHAR (11) unique, 
+nome VARCHAR (100)
+)
+create table agenda.endereco(
+id_endereco serial primary key  ,
+id_contato INTEGER,
+logradouro VARCHAR(50),
+bairro VARCHAR(30),
+numero INT,
+uf VARCHAR(2),
+municipio VARCHAR(30),
+cep VARCHAR(8),
+preferencial char(1),
+FOREIGN KEY (id_contato) REFERENCES agenda.contato (id_contato)
+
+)
+
+create table agenda.telefone(
+id_telefone  serial primary key ,
+id_contato INTEGER ,
+telefone VARCHAR(11), 
+preferencial VARCHAR(1),
+FOREIGN KEY (id_contato) REFERENCES agenda.contato (id_contato)
+
+)
+
+create table agenda.email(
+id_email serial primary key  ,
+id_contato  INTEGER,
+email VARCHAR(50),
+preferencial VARCHAR(1),
+FOREIGN KEY (id_contato) REFERENCES agenda.contato (id_contato)
+
+)
